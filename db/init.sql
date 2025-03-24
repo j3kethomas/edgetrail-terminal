@@ -1,0 +1,1 @@
+create database edgetrail_db; 
