@@ -9,6 +9,9 @@ setup(
         "yfinance",
         "numpy",
         "matplotlib",
-        "fredapi"
+        "fredapi",
+        "sqlalchemy",
+        "sqlite3",
+        "datetime"
     ],
 ) 
