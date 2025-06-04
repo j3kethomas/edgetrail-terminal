@@ -146,11 +146,39 @@ def roc(ticker:str, window: int)-> float:
     roc = data.iloc[:,1].diff(window=window)
     return roc 
 
-def ewma(ticker:str, window: int)-> float:
-    pass 
+def acceleration(ticker:str, window: int)-> float:
+    data = load_data(ticker)
+    roc = data.iloc[:,1].diff(periods=window)
+    acceleration = roc.diff(periods=window)
+    return acceleration
 
+def ewma(ticker:str, window: int)-> float:
+    data = load_data(ticker)
+    ewma = round(data.iloc[:,1].ewm(span=window, adjust=False).mean(),2)
+    return ewma
+
+def outlier_detection(ticker:str)-> int:
+    data = load_data(ticker)
+    q1 = data.iloc[:,1].quantile(0.25)
+    q3 = data.iloc[:,1].quantile(0.75)
+    iqr = q3 - q1
+    lower_bound = q1 - 1.5*iqr
+    upper_bound = q3 + 1.5*iqr
+    outliers = data[(data.iloc[:,1] < lower_bound) | (data.iloc[:,1] > upper_bound)]
+    return len(outliers)
+
+def momentum(ticker:str, window:int)->float:
+    pass
+
+def carry(ticker:str)-> float:
+    pass
+
+def equity_risk_premium(ticker:str)-> float:
+    pass
+
+def term_premium(ticker:str)-> float:
+    pass
 
 
 if __name__ == "__main__":
    ticker = "ES=F"
-   print(rolling_atr(ticker, window=14))
