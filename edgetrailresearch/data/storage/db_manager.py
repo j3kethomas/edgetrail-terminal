@@ -56,4 +56,4 @@ class DatabaseManager:
         return self.execute_query(query)
 
 # Create a singleton instance
-db_manager = DatabaseManager() 
+db_manager = DatabaseManager()  
