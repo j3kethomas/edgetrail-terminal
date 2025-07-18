@@ -86,7 +86,7 @@ def load_data(table_name: str, start: Optional[str] = None, end: Optional[str] =
 # Define your data series
 YF_TICKERS = [
     "ES=F", "NQ=F", "RTY=F", "YM=F",
-    "NKD=F", "^HSI", "BTC=F", "^VIX",
+    "NKD=F", "^HSI", "^FTSE","^STOXX50E", "BTC=F", "^VIX",
     "ZT=F", "ZF=F", "ZN=F", "ZB=F",
     "UB=F", "GC=F", "SI=F", "HG=F",
     "CL=F", "NG=F", "EURUSD=X", "JPY=X",
