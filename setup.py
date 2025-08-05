@@ -11,7 +11,6 @@ setup(
         "matplotlib",
         "fredapi",
         "sqlalchemy",
-        "sqlite3",
         "datetime"
     ],
 ) 
